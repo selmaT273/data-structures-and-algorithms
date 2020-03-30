@@ -36,10 +36,16 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  for (let count = 0; count < times; count++)
+  {
+    callback(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
