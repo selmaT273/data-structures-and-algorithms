@@ -152,8 +152,21 @@ Iterate over the array using forEach to determine the output based on several ru
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
-const fizzbuzz = (arr) => {
+const fizzbuzz = (inputs) => {
   // Solution code here...
+  let arr = [];
+  inputs.forEach(num => {
+    if (num % 3 === 0 && num % 5 === 0){
+      arr.push('Fizz Buzz');
+    } else if (num % 5 === 0){
+      arr.push('Buzz');
+    } else if (num % 3 === 0){
+      arr.push('Fizz');
+    } else {
+      arr.push(num);
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
