@@ -10,7 +10,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 const appendTheEnd = (str) => {
   let b = `${str} The end.`
-  return str + b;
+  return b;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -29,6 +29,7 @@ console.log(a) prints [1, 2, 3, 1]
 const appendFirstToLast = (arr) => {
   let targetValue = arr[0]
   arr.push(targetValue);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
