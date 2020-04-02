@@ -122,11 +122,17 @@ const people = [
 
 const sortPeople = (arr) => {
   // Solution code here...
-  arr.sort((x, y) => {
-
+  arr.sort(function (a, b) {
+    if ( a.lastName < b.lastName ) {
+      return -1;
+    } else if ( a.lastName > b.lastName ) {
+      return 1;
+    } else {
+      return 0;
+    }
   });
-
   return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
