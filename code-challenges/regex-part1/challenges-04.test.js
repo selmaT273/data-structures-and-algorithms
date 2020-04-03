@@ -27,6 +27,12 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  let firstUpper = /[A-Z][a-z]+/g;
+  if (firstUpper.test(str)) {
+    return str.match(firstUpper);
+  } else {
+    return [];
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,6 +43,10 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let filtered = arr.filter(function(item){
+    return /^[A-J][a-z]+/g.test(item);
+  });
+  return filtered;
 };
 
 /* ------------------------------------------------------------------------------------------------
