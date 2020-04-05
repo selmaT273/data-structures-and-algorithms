@@ -81,8 +81,7 @@ const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
   recipe.ingredients.forEach(ingredient => {
-    let firstSlice = ingredient.slice(ingredient.indexOf(' ') + 1);
-    result.push(firstSlice.slice(firstSlice.indexOf(' ') + 1));
+    result.push(ingredient.slice(ingredient.indexOf(' ', (ingredient.indexOf(' ')+1)) + 1));
   })
   return result;
 };
@@ -98,6 +97,7 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.for
   return result;
 };
 
