@@ -107,8 +107,17 @@ Write a function named hasChildrenEntries that is similar to your hasChildrenVal
 The input and output of this function are the same as the input and output from challenge 3.
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenEntries = (arr, character) => {
+const hasChildrenEntries = (arr, characterName) => {
   // Solution code here...
+  let hasChildren;
+  arr.forEach(character => {
+    let nameProperty = Object.entries(character)[0];
+    if (nameProperty[1] === characterName) {
+      let childrenProperty = Object.entries(character)[2];
+      hasChildren = childrenProperty[1].length > 0;
+    }
+  });
+  return hasChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -119,6 +128,7 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
