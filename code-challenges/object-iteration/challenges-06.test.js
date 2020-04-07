@@ -92,7 +92,11 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-
+  for (let eachCharacter of Object.values(arr)) {
+    if (eachCharacter.name === character){
+      return eachCharacter.children.length > 0;
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
