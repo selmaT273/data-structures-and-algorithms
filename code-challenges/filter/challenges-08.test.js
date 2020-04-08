@@ -10,11 +10,12 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
+  let odds = arr.filter(n => n % 2)
+  return odds;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
-
 Write a function named filterStringsWithVowels that, given an array of strings as input, uses filter to return an array with only words that contain vowels.
 
 The callback function to filter should include or utilize a regular expression pattern.
