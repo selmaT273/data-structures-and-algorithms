@@ -13,9 +13,11 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
-  return arr.map(function (x) {
-    return Math.pow(2, x);
-  });
+  const looped = []
+  for (let element in arr) {
+    looped.push(2 ** arr[element]);
+  }
+  return looped;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,6 +38,9 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  return arr.map(function (x) {
+    return Math.pow(2, x);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
