@@ -43,6 +43,11 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  let unique1 = forbiddenValues.filter((unique) =>
+    arr.indexOf(unique) === -1);
+  let unique2 = arr.filter((unique) =>
+    forbiddenValues.indexOf(unique) === -1);
+  return unique1.concat(unique2);
 };
 
 /* ------------------------------------------------------------------------------------------------
