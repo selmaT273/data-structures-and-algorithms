@@ -14,6 +14,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 
 const getCourseKeys = (obj) => {
   // Solution code here...
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,6 +72,9 @@ let characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  arr.forEach(character => {
+    houses.push(character.house);
+  })
   return houses;
 };
 
@@ -88,7 +92,11 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-
+  for (let eachCharacter of Object.values(arr)) {
+    if (eachCharacter.name === character){
+      return eachCharacter.children.length > 0;
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,8 +107,17 @@ Write a function named hasChildrenEntries that is similar to your hasChildrenVal
 The input and output of this function are the same as the input and output from challenge 3.
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenEntries = (arr, character) => {
+const hasChildrenEntries = (arr, characterName) => {
   // Solution code here...
+  let hasChildren;
+  arr.forEach(character => {
+    let nameProperty = Object.entries(character)[0];
+    if (nameProperty[1] === characterName) {
+      let childrenProperty = Object.entries(character)[2];
+      hasChildren = childrenProperty[1].length > 0;
+    }
+  });
+  return hasChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,6 +128,16 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   // Solution code here...
+  let characterTotal = [];
+  arr.forEach(characterObject => {
+    characterTotal.push(characterObject.name);
+    if (characterObject.spouse) {
+      characterTotal.push(characterObject.spouse);
+    }
+    characterObject.children.forEach(child =>
+      characterTotal.push(child));
+  });
+  return characterTotal.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
