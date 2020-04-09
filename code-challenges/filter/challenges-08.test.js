@@ -91,6 +91,8 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   // Solution code here...
+  return arr.filter(greaterThanStat =>
+    greaterThanStat.baseStat > minBaseStat);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -103,6 +105,9 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
+  let nameOfStat = arr.filter(eachStat => eachStat.baseStat > minBaseStat);
+  return nameOfStat.map(eachStat =>
+    eachStat.stat.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
