@@ -10,11 +10,12 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
+  let odds = arr.filter(n => n % 2)
+  return odds;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
-
 Write a function named filterStringsWithVowels that, given an array of strings as input, uses filter to return an array with only words that contain vowels.
 
 The callback function to filter should include or utilize a regular expression pattern.
@@ -25,6 +26,10 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
+  let stringsWithvowels = arr.filter(function(eachString){
+    return /[aeiou]/g.test(eachString);
+  });
+  return stringsWithvowels;
 };
 
 
@@ -38,6 +43,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  return arr.filter(eachValue => !forbiddenValues.includes(eachValue));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,6 +87,8 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   // Solution code here...
+  return arr.filter(greaterThanStat =>
+    greaterThanStat.baseStat > minBaseStat);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,6 +101,9 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
+  let nameOfStat = arr.filter(eachStat => eachStat.baseStat > minBaseStat);
+  return nameOfStat.map(eachStat =>
+    eachStat.stat.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,6 +157,12 @@ const characters = [
 
 const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
+  let filtered = arr.filter(eachCharacter => {
+    if (!eachCharacter.children) {
+      return eachCharacter;
+    }
+  })
+  return filtered;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -158,6 +175,16 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 
 const evenOddNumericValues = (arr) => {
   // Solution code here...
+  let nonNumerics = arr.filter(function(eachInput){
+    return typeof(eachInput) !== 'string';
+  });
+  return nonNumerics.map((evenOdd) => {
+    if (evenOdd % 2 === 0) {
+      return 'even';
+    } else {
+      return 'odd';
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
