@@ -184,6 +184,14 @@ const isPrime = (value) => {
 
 const countPrimeNumbers = (arr) => {
   // Solution code here...
+  let countPrimes = arr.reduce((accumulator, num, idx) => {
+    if (isPrime(num)) {
+      return accumulator + 1;
+    } else {
+      return accumulator;
+    }
+  }, 0);
+  return countPrimes;
 };
 
 /* ------------------------------------------------------------------------------------------------
