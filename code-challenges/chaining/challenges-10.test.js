@@ -13,6 +13,11 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
+  let newArr = input.reduce((howMany, arrInArrays) => {
+    let total = arrInArrays.filter(someValue => someValue === target).length;
+    return howMany + total;
+  }, 0);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
