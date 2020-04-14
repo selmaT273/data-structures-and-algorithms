@@ -12,7 +12,8 @@ const validatePin = (pin) => {
   // Solution code here...
   if(/^(\d{4}|^\d{6})$/.test(pin)) {
     return true;
-  } else {return false;
+  } else {
+    return false;
   }
 };
 
@@ -34,6 +35,7 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
+  return /^\w+([-+.']\w+)?@\w+([-.]\w+)*\.(org|com|net)$/gm.test(email)
 };
 
 /* ------------------------------------------------------------------------------------------------
