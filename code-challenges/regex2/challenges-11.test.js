@@ -61,7 +61,8 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
-};
+  return /^(\d{3}|\(\d{3}\))[-. ]?(\d{3})[-. ]?(\d{4})$/gm.test(phoneNumber)
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4 - Stretch Goal
