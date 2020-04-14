@@ -10,6 +10,10 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 
 const validatePin = (pin) => {
   // Solution code here...
+  if(/^(\d{4}|^\d{6})$/.test(pin)) {
+    return true;
+  } else {return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
