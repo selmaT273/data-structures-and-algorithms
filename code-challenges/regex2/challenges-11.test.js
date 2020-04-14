@@ -10,6 +10,11 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 
 const validatePin = (pin) => {
   // Solution code here...
+  if(/^(\d{4}|^\d{6})$/.test(pin)) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -30,6 +35,7 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
+  return /^\w+([-+.']\w+)?@\w+([-.]\w+)*\.(org|com|net)$/gm.test(email)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +61,8 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
-};
+  return /^(\d{3}|\(\d{3}\))[-. ]?(\d{3})[-. ]?(\d{4})$/gm.test(phoneNumber)
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4 - Stretch Goal
