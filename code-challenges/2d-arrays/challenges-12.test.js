@@ -164,6 +164,15 @@ let lowestWeeklyTemperatureData = [
 
 const lowestWeeklyAverage = (weather) => {
   // Solution code here...
+  function sum(array) {
+    return array.reduce((sum, next) => sum + next, 0);
+  }
+
+  function weeklyAverage(week) {
+    return sum(week) /week.length
+  }
+
+  return weather.map(weeklyAverage).reduce((min, next) => next < min ? next : min);
 };
 
 /* ------------------------------------------------------------------------------------------------
