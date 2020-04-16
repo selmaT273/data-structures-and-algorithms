@@ -58,6 +58,14 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+
+  let odd = '';
+  for(let i in str) {
+    if(i%2 !== 0) {
+      odd += str[i];
+    }
+  }
+  return odd;
 };
 
 /* ------------------------------------------------------------------------------------------------
