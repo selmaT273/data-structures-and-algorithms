@@ -14,11 +14,6 @@ const firstLetters = (arr) => {
     return eachStr.charAt(0)
   })
   return newArr;
-
-  // let newArr = [];
-  // return arr.map(eachStr => {
-  //   newArr.push(eachStr.charAt(0));
-  // });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,6 +26,13 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
+  const happinessArr = [];
+  arr.map(eachStr => {
+    if (eachStr.includes(':)')) {
+      happinessArr.push(eachStr);
+    }
+  });
+  return happinessArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -43,6 +45,7 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  return arr.map(eachNbr => eachNbr.replace(/[^\d]/g,''));
 };
 
 /* ------------------------------------------------------------------------------------------------
