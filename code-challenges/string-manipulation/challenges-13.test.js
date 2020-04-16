@@ -76,6 +76,9 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  return arr.every(str => {
+    return str.includes(':)');
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,6 +89,7 @@ Write a function named findAnything that takes in an array of strings, along wit
 
 const findAnything = (arr, target) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
