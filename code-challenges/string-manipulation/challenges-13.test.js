@@ -10,6 +10,10 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
+  const newArr = arr.map(eachStr => {
+    return eachStr.charAt(0)
+  })
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -22,6 +26,13 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
+  const happinessArr = [];
+  arr.map(eachStr => {
+    if (eachStr.includes(':)')) {
+      happinessArr.push(eachStr);
+    }
+  });
+  return happinessArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,6 +45,7 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  return arr.map(eachNbr => eachNbr.replace(/[^\d]/g,''));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,6 +58,14 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+
+  let odd = '';
+  for(let i in str) {
+    if(i%2 !== 0) {
+      odd += str[i];
+    }
+  }
+  return odd;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,6 +76,9 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  return arr.every(str => {
+    return str.includes(':)');
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,6 +89,9 @@ Write a function named findAnything that takes in an array of strings, along wit
 
 const findAnything = (arr, target) => {
   // Solution code here...
+  return arr.filter(str => {
+    return str.includes(target);
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,6 +102,9 @@ Write a function named findEvery that takes in an array of strings, along with a
 
 const findEvery = (arr, target) => {
   // Solution code here...
+  return arr.every(str => {
+    return str.includes(target);
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,6 +121,7 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 
 const unenrollBrook = (arr) => {
   // Solution code here...
+  return arr.map(classes => classes.filter(eachPerson => !eachPerson.includes('Brook')));
 };
 
 /* ------------------------------------------------------------------------------------------------
