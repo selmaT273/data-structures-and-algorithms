@@ -164,6 +164,15 @@ let lowestWeeklyTemperatureData = [
 
 const lowestWeeklyAverage = (weather) => {
   // Solution code here...
+  function sum(array) {
+    return array.reduce((sum, next) => sum + next, 0);
+  }
+
+  function weeklyAverage(week) {
+    return sum(week) /week.length
+  }
+
+  return weather.map(weeklyAverage).reduce((min, next) => next < min ? next : min);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -180,6 +189,16 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 
 const excel = (str) => {
   // Solution code here...
+  function sum(array) {
+    return array.reduce((sum, next) => sum + next, 0);
+  }
+
+  let rows = str.split('\n');
+  return rows.map(row => {
+    let cols = row.split(',');
+    let colsAsNumbers = cols.map(colString => parseInt(colString));
+    return sum(colsAsNumbers);
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
